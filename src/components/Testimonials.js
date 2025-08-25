@@ -81,92 +81,273 @@ const Testimonials = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="group relative"
-              whileHover={{ y: -8, scale: 1.02 }}
-            >
-              <motion.div 
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 relative overflow-hidden"
-                whileHover={{ scale: 1.02 }}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+          {/* First Column */}
+          <div className="space-y-8">
+            {testimonials.slice(0, 2).map((testimonial, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group relative"
+                whileHover={{ y: -8, scale: 1.02 }}
               >
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-5 transition-opacity duration-300"
-                  style={{ background: `linear-gradient(to right, ${testimonial.color.split(' ')[1]}, ${testimonial.color.split(' ')[3]})` }}
-                />
-                
-                <div className="relative z-10">
-                  <div className="flex items-center mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <motion.div
-                        key={i}
-                        initial={{ scale: 0, rotate: -180 }}
-                        whileInView={{ scale: 1, rotate: 0 }}
-                        transition={{ duration: 0.5, delay: i * 0.1 }}
-                        viewport={{ once: true }}
+                <motion.div 
+                  className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-blue-200 hover:border-blue-400 relative overflow-hidden"
+                  whileHover={{ scale: 1.02 }}
+                >
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-5 transition-opacity duration-300"
+                    style={{ background: `linear-gradient(to right, ${testimonial.color.split(' ')[1]}, ${testimonial.color.split(' ')[3]})` }}
+                  />
+                  
+                  <div className="relative z-10">
+                    <div className="flex items-center mb-4">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <motion.div
+                          key={i}
+                          initial={{ scale: 0, rotate: -180 }}
+                          whileInView={{ scale: 1, rotate: 0 }}
+                          transition={{ duration: 0.5, delay: i * 0.1 }}
+                          viewport={{ once: true }}
+                        >
+                          <Star className="w-5 h-5 text-yellow-400 fill-current" />
+                        </motion.div>
+                      ))}
+                    </div>
+                    
+                    <motion.div
+                      className="mb-4"
+                      whileHover={{ rotate: 5 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
+                      <Quote className="w-8 h-8 text-blue-200 group-hover:text-blue-300 transition-colors" />
+                    </motion.div>
+                    
+                    <p className="text-gray-600 mb-6 leading-relaxed group-hover:text-gray-700 transition-colors">
+                      "{testimonial.content}"
+                    </p>
+                    
+                    <div className="flex items-center">
+                      <motion.div 
+                        className="w-12 h-12 bg-gradient-to-r from-blue-100 to-cyan-100 rounded-full flex items-center justify-center mr-4 border-2 border-blue-200 group-hover:border-blue-400 transition-colors"
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                        animate={{ 
+                          boxShadow: [
+                            "0 0 0 0 rgba(59, 130, 246, 0.4)",
+                            "0 0 0 8px rgba(59, 130, 246, 0)",
+                            "0 0 0 0 rgba(59, 130, 246, 0)"
+                          ]
+                        }}
+                        transition={{ 
+                          duration: 2, 
+                          repeat: Infinity, 
+                          delay: index * 0.3 
+                        }}
                       >
-                        <Star className="w-5 h-5 text-yellow-400 fill-current" />
+                        <testimonial.icon className="w-6 h-6 text-blue-600" />
                       </motion.div>
-                    ))}
+                      <div>
+                        <h4 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                          {testimonial.name}
+                        </h4>
+                        <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors">
+                          {testimonial.role}
+                        </p>
+                      </div>
+                    </div>
                   </div>
                   
                   <motion.div
-                    className="mb-4"
-                    whileHover={{ rotate: 5 }}
-                    transition={{ type: "spring", stiffness: 300 }}
+                    className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    whileHover={{ scale: 1.2 }}
                   >
-                    <Quote className="w-8 h-8 text-blue-200 group-hover:text-blue-300 transition-colors" />
+                    <Sparkles className="w-5 h-5 text-blue-400" />
                   </motion.div>
-                  
-                  <p className="text-gray-600 mb-6 leading-relaxed group-hover:text-gray-700 transition-colors">
-                    "{testimonial.content}"
-                  </p>
-                  
-                  <div className="flex items-center">
-                    <motion.div 
-                      className="w-12 h-12 bg-gradient-to-r from-blue-100 to-cyan-100 rounded-full flex items-center justify-center mr-4 border-2 border-blue-200 group-hover:border-blue-400 transition-colors"
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      animate={{ 
-                        boxShadow: [
-                          "0 0 0 0 rgba(59, 130, 246, 0.4)",
-                          "0 0 0 8px rgba(59, 130, 246, 0)",
-                          "0 0 0 0 rgba(59, 130, 246, 0)"
-                        ]
-                      }}
-                      transition={{ 
-                        duration: 2, 
-                        repeat: Infinity, 
-                        delay: index * 0.3 
-                      }}
-                    >
-                      <testimonial.icon className="w-6 h-6 text-blue-600" />
-                    </motion.div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
-                        {testimonial.name}
-                      </h4>
-                      <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors">
-                        {testimonial.role}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                
-                <motion.div
-                  className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  whileHover={{ scale: 1.2 }}
-                >
-                  <Sparkles className="w-5 h-5 text-blue-400" />
                 </motion.div>
               </motion.div>
-            </motion.div>
-          ))}
+            ))}
+          </div>
+
+          {/* Second Column - Slightly Down */}
+          <div className="space-y-8 mt-16">
+            {testimonials.slice(2, 4).map((testimonial, index) => (
+              <motion.div
+                key={index + 2}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: (index + 2) * 0.1 }}
+                viewport={{ once: true }}
+                className="group relative"
+                whileHover={{ y: -8, scale: 1.02 }}
+              >
+                <motion.div 
+                  className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-blue-300 hover:border-blue-500 relative overflow-hidden"
+                  whileHover={{ scale: 1.02 }}
+                >
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-5 transition-opacity duration-300"
+                    style={{ background: `linear-gradient(to right, ${testimonial.color.split(' ')[1]}, ${testimonial.color.split(' ')[3]})` }}
+                  />
+                  
+                  <div className="relative z-10">
+                    <div className="flex items-center mb-4">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <motion.div
+                          key={i}
+                          initial={{ scale: 0, rotate: -180 }}
+                          whileInView={{ scale: 1, rotate: 0 }}
+                          transition={{ duration: 0.5, delay: i * 0.1 }}
+                          viewport={{ once: true }}
+                        >
+                          <Star className="w-5 h-5 text-yellow-400 fill-current" />
+                        </motion.div>
+                      ))}
+                    </div>
+                    
+                    <motion.div
+                      className="mb-4"
+                      whileHover={{ rotate: 5 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
+                      <Quote className="w-8 h-8 text-blue-200 group-hover:text-blue-300 transition-colors" />
+                    </motion.div>
+                    
+                    <p className="text-gray-600 mb-6 leading-relaxed group-hover:text-gray-700 transition-colors">
+                      "{testimonial.content}"
+                    </p>
+                    
+                    <div className="flex items-center">
+                      <motion.div 
+                        className="w-12 h-12 bg-gradient-to-r from-blue-100 to-cyan-100 rounded-full flex items-center justify-center mr-4 border-2 border-blue-300 group-hover:border-blue-500 transition-colors"
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                        animate={{ 
+                          boxShadow: [
+                            "0 0 0 0 rgba(59, 130, 246, 0.4)",
+                            "0 0 0 8px rgba(59, 130, 246, 0)",
+                            "0 0 0 0 rgba(59, 130, 246, 0)"
+                          ]
+                        }}
+                        transition={{ 
+                          duration: 2, 
+                          repeat: Infinity, 
+                          delay: (index + 2) * 0.3 
+                        }}
+                      >
+                        <testimonial.icon className="w-6 h-6 text-blue-600" />
+                      </motion.div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                          {testimonial.name}
+                        </h4>
+                        <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors">
+                          {testimonial.role}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <motion.div
+                    className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    whileHover={{ scale: 1.2 }}
+                  >
+                    <Sparkles className="w-5 h-5 text-blue-400" />
+                  </motion.div>
+                </motion.div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Third Column */}
+          <div className="space-y-8">
+            {testimonials.slice(4, 6).map((testimonial, index) => (
+              <motion.div
+                key={index + 4}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: (index + 4) * 0.1 }}
+                viewport={{ once: true }}
+                className="group relative"
+                whileHover={{ y: -8, scale: 1.02 }}
+              >
+                <motion.div 
+                  className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-blue-200 hover:border-blue-400 relative overflow-hidden"
+                  whileHover={{ scale: 1.02 }}
+                >
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-5 transition-opacity duration-300"
+                    style={{ background: `linear-gradient(to right, ${testimonial.color.split(' ')[1]}, ${testimonial.color.split(' ')[3]})` }}
+                  />
+                  
+                  <div className="relative z-10">
+                    <div className="flex items-center mb-4">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <motion.div
+                          key={i}
+                          initial={{ scale: 0, rotate: -180 }}
+                          whileInView={{ scale: 1, rotate: 0 }}
+                          transition={{ duration: 0.5, delay: i * 0.1 }}
+                          viewport={{ once: true }}
+                        >
+                          <Star className="w-5 h-5 text-yellow-400 fill-current" />
+                        </motion.div>
+                      ))}
+                    </div>
+                    
+                    <motion.div
+                      className="mb-4"
+                      whileHover={{ rotate: 5 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
+                      <Quote className="w-8 h-8 text-blue-200 group-hover:text-blue-300 transition-colors" />
+                    </motion.div>
+                    
+                    <p className="text-gray-600 mb-6 leading-relaxed group-hover:text-gray-700 transition-colors">
+                      "{testimonial.content}"
+                    </p>
+                    
+                    <div className="flex items-center">
+                      <motion.div 
+                        className="w-12 h-12 bg-gradient-to-r from-blue-100 to-cyan-100 rounded-full flex items-center justify-center mr-4 border-2 border-blue-200 group-hover:border-blue-400 transition-colors"
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                        animate={{ 
+                          boxShadow: [
+                            "0 0 0 0 rgba(59, 130, 246, 0.4)",
+                            "0 0 0 8px rgba(59, 130, 246, 0)",
+                            "0 0 0 0 rgba(59, 130, 246, 0)"
+                          ]
+                        }}
+                        transition={{ 
+                          duration: 2, 
+                          repeat: Infinity, 
+                          delay: (index + 4) * 0.3 
+                        }}
+                      >
+                        <testimonial.icon className="w-6 h-6 text-blue-600" />
+                      </motion.div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                          {testimonial.name}
+                        </h4>
+                        <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors">
+                          {testimonial.role}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <motion.div
+                    className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    whileHover={{ scale: 1.2 }}
+                  >
+                    <Sparkles className="w-5 h-5 text-blue-400" />
+                  </motion.div>
+                </motion.div>
+              </motion.div>
+            ))}
+          </div>
         </div>
 
         <motion.div
