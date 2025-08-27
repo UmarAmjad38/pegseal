@@ -116,8 +116,7 @@ const Contact = () => {
               Apply For Pilot Certification
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Ready to demonstrate that your AI applications meet privacy and governance readiness standards? 
-              Contact us to begin your journey toward earning the PAG Seal.
+              The PAG Seal is pioneering recognition for AI applications that highlight privacy and governance best practices. Contact us to secure your place among the first recognized.
             </p>
           </div>
 

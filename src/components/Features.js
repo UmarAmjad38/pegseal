@@ -1,97 +1,111 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Database, Search, MessageSquare, Users, Zap, Shield, Globe, BarChart3, Sparkles, ArrowRight, Lock, Brain, Award, CheckCircle } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  Users,
+  Shield,
+  Lock,
+  Brain,
+  Award,
+  CheckCircle,
+  ArrowRight,
+} from "lucide-react";
 
 const Features = () => {
   const features = [
     {
       icon: Shield,
       title: "Our Mission",
-      description: "The PAG Seal is an independent trust mark, grounded in U.S. privacy law and AI governance best practices, recognizing AI applications that demonstrate essential privacy protections and governance assurance.",
+      description:
+        "The PAG Seal is a first-of-its-kind trust mark, informed by U.S. privacy law and AI governance principles. Our mission is to recognize AI applications that show evidence of adopting privacy protections and governance best practices.",
       items: [
         "Independent trust mark for AI applications",
-        "Grounded in U.S. privacy law",
-        "AI governance best practices",
-        "Essential privacy protections",
-        "Governance assurance validation",
-        "Streamlined review process"
+        "Informed by U.S. privacy law",
+        "Guided by AI governance best practices",
+        "Emphasis on responsible privacy protections",
+        "Recognition of governance readiness",
+        "Streamlined review approach",
       ],
-      color: "from-blue-500 to-cyan-500"
+      color: "from-blue-500 to-cyan-500",
     },
     {
       icon: Brain,
       title: "Our Expertise",
-      description: "At PAG Seal, we specialize in privacy and AI governance. Our framework supports organizations in demonstrating that their AI applications are built with trust, accountability, and transparency.",
+      description:
+        "At PAG Seal, our focus is on privacy and AI governance insights. We guide organizations in showing how their AI applications reflect trust, accountability, and transparency.",
       items: [
         "Privacy and AI governance specialization",
-        "Trust, accountability, and transparency",
-        "Clear and structured certification path",
-        "Leading laws and regulations compliance",
-        "Best-practice frameworks alignment",
-        "Organizational AI readiness assessment"
+        "Emphasis on trust, accountability, and transparency",
+        "Clear and structured recognition process",
+        "Informed by leading privacy and AI governance principles",
+        "Alignment with best-practice frameworks",
+        "Organizational readiness evaluation",
       ],
-      color: "from-cyan-500 to-blue-600"
+      color: "from-cyan-500 to-blue-600",
     },
     {
       icon: Award,
       title: "Pilot Certification",
-      description: "Pilot Certification gives organizations an early opportunity to demonstrate that their AI applications meet privacy and governance readiness standards.",
+      description:
+        "The Pilot Certification program offers organizations an early opportunity to show evidence that their AI applications are engaging with privacy and governance best practices.",
       items: [
         "Early opportunity for recognition",
-        "Privacy readiness validation",
-        "Governance standards compliance",
-        "Seamless transition to PAG Seal",
-        "Visible edge with regulators",
-        "Investor and customer confidence"
+        "Assessment of privacy readiness",
+        "Guidance informed by governance best practices",
+        "Pathway toward PAG Seal recognition",
+        "Signal of commitment to regulators and stakeholders",
+        "Support for investor and customer trust",
       ],
-      color: "from-blue-600 to-indigo-600"
+      color: "from-blue-600 to-indigo-600",
     },
     {
       icon: Lock,
       title: "Proprietary Framework",
-      description: "Using our proprietary privacy and AI governance model, we review how organizations design, manage, and deploy their AI applications.",
+      description:
+        "The PAG Seal review framework examines how organizations design, manage, and deploy their AI applications. It delivers a groundbreaking alternative to lengthy audits, setting a new standard for recognition and readiness.",
       items: [
-        "Proprietary review model",
-        "AI application design assessment",
-        "Management process evaluation",
-        "Deployment strategy validation",
-        "Instead of lengthy audits",
-        "Streamlined validation process"
+        "PAG Seal review framework",
+        "Assessment of AI application design",
+        "Review of governance practices",
+        "Recognition of deployment approach",
+        "Practical alternative to traditional audits",
+        "Streamlined review approach",
       ],
-      color: "from-indigo-500 to-purple-500"
+      color: "from-indigo-500 to-purple-500",
     },
     {
       icon: CheckCircle,
-      title: "Seal of Readiness",
-      description: "The outcome is a seal of readiness that signals to investors, regulators, and customers that your AI is trustworthy, responsible, and prepared for rollout.",
+      title: "Seal Recognition",
+      description:
+        "The PAG Seal offers organizations a first-of-its-kind mark of recognition, highlighting their commitment to privacy and AI governance best practices. It serves as a visible sign of accountability that resonates with regulators, investors, and customers.",
       items: [
-        "Seal of readiness certification",
-        "Investor confidence signaling",
-        "Regulator trust building",
-        "Customer assurance",
-        "Trustworthy AI validation",
-        "Responsible AI recognition"
+        "Visible recognition of responsible AI practices",
+        "Demonstration of governance readiness",
+        "Competitive edge in the marketplace",
+        "Builds trust with regulators and investors",
+        "Enhanced brand reputation",
       ],
-      color: "from-purple-500 to-pink-500"
+      color: "from-purple-500 to-pink-500",
     },
     {
       icon: Users,
       title: "Our Team",
-      description: "PAG Seal is led by its founder, a GRC and Privacy Engineer with expertise spanning cybersecurity, privacy law, and artificial intelligence.",
+      description:
+        "PAG Seal is led by its founder, a GRC and Privacy Engineer as well as a Doctoral Candidate in AI and ML, with expertise spanning cybersecurity, privacy law, and artificial intelligence.",
       items: [
-        "GRC and Privacy Engineer leadership",
-        "Cybersecurity expertise",
-        "Privacy law knowledge",
-        "Artificial intelligence specialization",
-        "Legal and compliance background",
-        "Technical expertise foundation"
+        "Leadership in GRC and privacy engineering",
+        "Expertise in cybersecurity, U.S. privacy laws and regulations",
+        "Specialization in artificial intelligence",
+        "Insight into legal and compliance frameworks",
       ],
-      color: "from-pink-500 to-rose-500"
-    }
+      color: "from-pink-500 to-rose-500",
+    },
   ];
 
   return (
-    <section id="features" className="py-20 bg-gradient-to-br from-blue-50 via-white to-cyan-50 relative overflow-hidden">
+    <section
+      id="features"
+      className="py-20 bg-gradient-to-br from-blue-50 via-white to-cyan-50 relative overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -113,11 +127,13 @@ const Features = () => {
             Privacy & AI Governance Excellence
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Comprehensive framework for demonstrating AI trustworthiness and compliance with privacy standards.
+            Comprehensive framework for demonstrating AI trustworthiness and
+            compliance with privacy standards.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -129,7 +145,7 @@ const Features = () => {
               whileHover={{ y: -5 }}
             >
               <motion.div 
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 relative overflow-hidden"
+                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 relative overflow-hidden min-h-[400px] flex flex-col"
                 whileHover={{ scale: 1.02 }}
               >
                 <motion.div
@@ -154,7 +170,7 @@ const Features = () => {
                     <p className="text-gray-600 mb-4">
                       {feature.description}
                     </p>
-                    <ul className="space-y-2">
+                    <ul className="space-y-2 flex-grow">
                       {feature.items.map((item, itemIndex) => (
                         <motion.li 
                           key={itemIndex} 
@@ -260,41 +276,57 @@ const Features = () => {
       </div>
 
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <motion.div
-          className="absolute top-20 right-20 w-32 h-32 bg-blue-200 rounded-full opacity-20"
+        <motion.div 
+          className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-blue-200 to-cyan-200 rounded-full mix-blend-multiply filter blur-xl opacity-20"
           animate={{ 
             x: [0, 30, 0],
             y: [0, -30, 0],
-            scale: [1, 1.2, 1],
+            scale: [1, 1.1, 1],
             rotate: [0, 180, 360]
           }}
           transition={{ 
-            duration: 6, 
+            duration: 8, 
             repeat: Infinity, 
             ease: "easeInOut" 
           }}
         />
-        <motion.div
-          className="absolute bottom-20 left-20 w-24 h-24 bg-cyan-200 rounded-full opacity-20"
+        <motion.div 
+          className="absolute top-40 right-10 w-72 h-72 bg-gradient-to-br from-cyan-200 to-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-20"
           animate={{ 
-            x: [0, -20, 0],
-            y: [0, 20, 0],
-            scale: [1, 0.8, 1],
+            x: [0, -30, 0],
+            y: [0, 30, 0],
+            scale: [1, 0.9, 1],
             rotate: [360, 180, 0]
           }}
           transition={{ 
-            duration: 8, 
+            duration: 10, 
             repeat: Infinity, 
             ease: "easeInOut",
             delay: 2 
           }}
         />
+        <motion.div 
+          className="absolute -bottom-8 left-20 w-72 h-72 bg-gradient-to-br from-blue-300 to-cyan-300 rounded-full mix-blend-multiply filter blur-xl opacity-20"
+          animate={{ 
+            x: [0, 20, 0],
+            y: [0, -20, 0],
+            scale: [1, 1.2, 1],
+            rotate: [0, -180, -360]
+          }}
+          transition={{ 
+            duration: 12, 
+            repeat: Infinity, 
+            ease: "easeInOut",
+            delay: 4 
+          }}
+        />
+        
         <motion.div
-          className="absolute top-1/3 left-1/4 w-2 h-2 bg-blue-400 rounded-full"
+          className="absolute top-1/4 right-1/4 w-2 h-2 bg-blue-400 rounded-full"
           animate={{ 
             scale: [1, 2, 1],
             opacity: [0.5, 1, 0.5],
-            y: [0, -10, 0]
+            y: [0, -30, 0]
           }}
           transition={{ 
             duration: 2, 
@@ -303,9 +335,9 @@ const Features = () => {
           }}
         />
         <motion.div
-          className="absolute bottom-1/3 right-1/4 w-1.5 h-1.5 bg-cyan-400 rounded-full"
+          className="absolute top-1/3 left-1/3 w-1 h-1 bg-cyan-400 rounded-full"
           animate={{ 
-            scale: [1, 2.5, 1],
+            scale: [1, 3, 1],
             opacity: [0.3, 1, 0.3],
             x: [0, 5, 0]
           }}
@@ -313,6 +345,19 @@ const Features = () => {
             duration: 3, 
             repeat: Infinity,
             delay: 2 
+          }}
+        />
+        <motion.div
+          className="absolute bottom-1/4 left-1/4 w-3 h-3 bg-blue-300 rounded-full"
+          animate={{ 
+            scale: [1, 1.5, 1],
+            opacity: [0.4, 1, 0.4],
+            rotate: [0, 360, 0]
+          }}
+          transition={{ 
+            duration: 4, 
+            repeat: Infinity,
+            delay: 3 
           }}
         />
       </div>
