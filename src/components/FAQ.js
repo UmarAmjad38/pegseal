@@ -37,7 +37,7 @@ const FAQ = () => {
     },
     {
       question: "What expertise does PAG Seal have?",
-      answer: "PAG Seal is led by its founder, a GRC and Privacy Engineer and Doctoral Candidate in AI and ML, with expertise spanning cybersecurity, privacy law, and artificial intelligence.",
+      answer: "PAG Seal is led by its founder, a GRC and Privacy Engineer and Doctoral Candidate in AI and ML. To add in the certifications he has such which is the FIP, CIPM, and CIPP/US.",
       icon: Users
     },
     {

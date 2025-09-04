@@ -35,7 +35,7 @@ const Testimonials = () => {
       color: "from-cyan-500 to-blue-600"
     },
     {
-      text: "PAG Seal is led by its founder, a GRC and Privacy Engineer and Doctoral Candidate in AI and ML, with expertise spanning cybersecurity, privacy law, and artificial intelligence.",
+      text: "PAG Seal is led by its founder, a GRC and Privacy Engineer and Doctoral Candidate in AI and ML. To add in the certifications he has such which is the FIP, CIPM, and CIPP/US.",
       icon: Users,
       color: "from-blue-600 to-indigo-600"
     },

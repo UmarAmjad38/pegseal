@@ -90,7 +90,7 @@ const Features = () => {
       icon: Users,
       title: "Our Team",
       description:
-        "PAG Seal is led by its founder, a GRC and Privacy Engineer as well as a Doctoral Candidate in AI and ML, with expertise spanning cybersecurity, privacy law, and artificial intelligence.",
+        "PAG Seal is led by its founder, a GRC and Privacy Engineer and Doctoral Candidate in AI and ML. To add in the certifications he has such which is the FIP, CIPM, and CIPP/US.",
       items: [
         "Leadership in GRC and privacy engineering",
         "Expertise in cybersecurity, U.S. privacy laws and regulations",
