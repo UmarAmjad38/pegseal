@@ -152,8 +152,9 @@ const About = () => {
               </h3>
               <p className="text-gray-700 leading-relaxed">
                 PAG Seal is led by its founder, a GRC and Privacy Engineer and
-                Doctoral Candidate in AI and ML. To add in the certifications he
-                has such which is the FIP, CIPM, and CIPP/US.
+                Doctoral Candidate in AI and ML, holding FIP, CIPM, and CIPP/US
+                certifications with expertise in cybersecurity, privacy law, and
+                artificial intelligence.
               </p>
             </div>
 
